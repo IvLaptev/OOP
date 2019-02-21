@@ -1,5 +1,4 @@
-#pragma once
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <vector>
 
@@ -17,7 +16,7 @@ public:
 	Book(); // Создаёт пустой экземпляр
 
 	Book(int, const std::vector<std::string> &, std::string &,  // Создаёт экземпляр с
-			const std::string &, const std::string &);  // заполненными полями
+			const std::string &, const std::string &);			// заполненными полями
 
 	void setNumberOfPages(const int);	// Ввод количества страниц в книге
 
