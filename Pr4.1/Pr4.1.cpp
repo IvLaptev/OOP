@@ -4,7 +4,7 @@ using namespace std;
 
 double *createArray(int);	// Создаёт массив
 
-void fillArray(double *, int);	// Заполняет массив случайными функциями
+void fillArray(double *, int);	// Заполняет массив случайными числами
 
 void printArray(double *, int);	// Выводит массив на экран
 
