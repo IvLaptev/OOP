@@ -1,13 +1,28 @@
 #include <iostream>
+#include <Windows.h>
 #include "Car.h"
 using namespace std;
 
 void printInformation(Car &);
 
 int main() {
-	setlocale(LC_ALL, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
-	Car c1("Kyle", 4, 10, 100);
+	string m;
+	int s;
+	double a, v;
+
+	cout << "Enter model: ";
+	cin >> m;
+	cout << "Enter number of seats: ";
+	cin >> s;
+	cout << "Enter acceleration: ";
+	cin >> a;
+	cout << "Enter max speed: ";
+	cin >> v;
+
+	Car c1(m, s, a, v);
 	printInformation(c1);
 
 	cout << "-------------------------------" << endl;
