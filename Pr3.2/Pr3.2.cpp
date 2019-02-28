@@ -2,19 +2,34 @@
 #include <vector>
 #include "Student.h"
 #include "Group.h"
+#include <Windows.h>
 using namespace std;
 
 int main() {
-	setlocale(LC_ALL, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
-	Student s1("Andrew", "Voronov", 10, "+71234567890", "av@kail.ru");
+	string name, surname, tel, mail;
+	int age;
+	cout << "Enter name: ";
+	cin >> name;
+	cout << "Enter surname: ";
+	cin >> surname;
+	cout << "Enter age: ";
+	cin >> age;
+	cout << "Enter phone number: ";
+	cin >> tel;
+	cout << "Enter email: ";
+	cin >> mail;
+
+	Student s1(name, surname, age, tel, mail);
 	Student s2("Stepan", "Kot", 40, "+79184736254", "kots@yambler.cot");
 	Student s3;
 
 	vector<Student> s = {s1, s2, s3};
 
 	Group inbo4("INBO-04-18", s);
-	inbo4.printStudent(1);
+	inbo4.printStudent(0);
 
 	cout << "-----------------------------------" << endl;
 
