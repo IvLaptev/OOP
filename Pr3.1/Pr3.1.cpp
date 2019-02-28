@@ -1,11 +1,15 @@
-﻿#include <iostream>
+#include <iostream>
 #include <vector>
 #include <string>
+#include <Windows.h>
 #include "Book.h"
 
 using namespace std;
 
 int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
 	Book book1;
 
 	cout << "Title: " << book1.getTitle() << endl;
@@ -21,14 +25,34 @@ int main() {
 
 	cout << "----------------------------------------" << endl;
 
-	book1.setTitle("Physics");
-	book1.setAuthors({"Chertov", "Vorobiov"});
-	book1.addAuthor("Trofimov");
-	book1.setNumberOfPages(637);
-	book1.openPage(563);
-	book1.nextPage();
+	/*
 	book1.setGenre("Education");
-	book1.setPublisher("Physmathlit");
+	book1.setPublisher("Physmathlit");*/
+
+	string s;
+	cout << "Enter title: ";
+	cin >> s;
+	book1.setTitle(s);
+	cout << "Enter first author: ";
+	cin >> s;
+	book1.setAuthors({s});
+	cout << "Enter second author: ";
+	cin >> s;
+	book1.addAuthor(s);
+	int f;
+	cout << "Enter number of pages: ";
+	cin >> f;
+	book1.setNumberOfPages(f);
+	cout << "Enter current page: ";
+	cin >> f;
+	book1.openPage(f);
+	book1.nextPage();
+	cout << "Enter publisher: ";
+	cin >> s;
+	book1.setPublisher(s);
+	cout << "Enter genre: ";
+	cin >> s;
+	book1.setGenre(s);
 
 	cout << "Title: " << book1.getTitle() << endl;
 	cout << "Authors: ";
@@ -43,7 +67,7 @@ int main() {
 
 	cout << "----------------------------------------" << endl;
 
-	string s = "sss";
+	s = "sss";
 	Book book2(250, {s}, s, s, s);
 	book2.openPage(250);
 	book2.nextPage();
