@@ -4,13 +4,21 @@ using namespace std;
 
 int main() {
 	Vector v1;
-	cout << "L: " << v1.getLength() << endl;;
+	cout << "L: " << v1.getLength() << endl;
+
+	double x, y, z;
+	cout << "Enter x: ";
+	cin >> x;
+	cout << "Enter y: ";
+	cin >> y;
+	cout << "Enter z: ";
+	cin >> z;
 
 	cout << "---------------" << endl;
 
-	v1.setX(2);
-	v1.setY(2);
-	v1.setZ(1);
+	v1.setX(x);
+	v1.setY(y);
+	v1.setZ(z);
 	cout << "L: " << v1.getLength() << endl;
 
 	cout << "---------------" << endl;
@@ -33,5 +41,6 @@ int main() {
 			<< v2.getZ() << ")" << endl;
 	cout << "L: " << v2.getLength() << endl;
 
+	system("pause");
 	return 0;
 }
