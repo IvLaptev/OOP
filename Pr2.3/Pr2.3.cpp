@@ -23,10 +23,14 @@ int main() {
 		}
 	}
 
-	cout << "a = " << a << endl;
-	cout << "b = " << b << endl;
-	cout << "y = " << y << endl;
-	cout << "t = " << t << endl;
+	if (isnan(y) || isnan(t) || isinf(y) || isinf(t)) {
+		cout << "Error: cannot count result" << endl;
+	} else {
+		cout << "a = " << a << endl;
+		cout << "b = " << b << endl;
+		cout << "y = " << y << endl;
+		cout << "t = " << t << endl;
+	}
 
 	system("pause");
 	return 0;
