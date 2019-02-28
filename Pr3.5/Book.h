@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 #include <vector>
 
@@ -6,42 +6,43 @@
 #define BOOK_H_
 
 class Book {
-	int pages;	// количество страниц
-	std::vector<std::string> authors;	// авторы
-	std::string title;	// название
-	std::string genre;	// жанр
-	std::string publisher;	// издатель
+	int pages;	// РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂР°РЅРёС†
+	std::vector<std::string> authors;	// Р°РІС‚РѕСЂС‹
+	std::string title;	// РЅР°Р·РІР°РЅРёРµ
+	std::string genre;	// Р¶Р°РЅСЂ
+	std::string publisher;	// РёР·РґР°С‚РµР»СЊ
 public:
+	// РџРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Р№ РѕРїРµСЂР°С‚РѕСЂ СЂР°РІРµРЅСЃС‚РІР° РґР»СЏ РѕР±СЉРµРєС‚РѕРІ РґР°РЅРЅРѕРіРѕ РєР»Р°СЃСЃР°
 	friend bool operator== (const Book& left, const Book& right);
 
-	Book(); // Создаёт пустой экземпляр
+	Book(); // РЎРѕР·РґР°С‘С‚ РїСѓСЃС‚РѕР№ СЌРєР·РµРјРїР»СЏСЂ
 
-	Book(int, const std::vector<std::string> &, std::string &,  // Создаёт экземпляр с
-			const std::string &, const std::string &);			// заполненными полями
+	Book(int, const std::vector<std::string> &, std::string &,  // РЎРѕР·РґР°С‘С‚ СЌРєР·РµРјРїР»СЏСЂ СЃ
+			const std::string &, const std::string &);			// Р·Р°РїРѕР»РЅРµРЅРЅС‹РјРё РїРѕР»СЏРјРё
 
-	void setNumberOfPages(const int);	// Ввод количества страниц в книге
+	void setNumberOfPages(const int);	// Р’РІРѕРґ РєРѕР»РёС‡РµСЃС‚РІР° СЃС‚СЂР°РЅРёС† РІ РєРЅРёРіРµ
 
-	int getNumberOfPages();		// Получение количества страниц
+	int getNumberOfPages();		// РџРѕР»СѓС‡РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° СЃС‚СЂР°РЅРёС†
 
-	void setAuthors(const std::vector<std::string> &);	// Ввод авторов книги
+	void setAuthors(const std::vector<std::string> &);	// Р’РІРѕРґ Р°РІС‚РѕСЂРѕРІ РєРЅРёРіРё
 
-	void addAuthor(const std::string &);	// Добавление одного автора к уже существующим
+	void addAuthor(const std::string &);	// Р”РѕР±Р°РІР»РµРЅРёРµ РѕРґРЅРѕРіРѕ Р°РІС‚РѕСЂР° Рє СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРј
 
-	std::vector<std::string> &getAuthors();	// Получение авторов книги
+	std::vector<std::string> &getAuthors();	// РџРѕР»СѓС‡РµРЅРёРµ Р°РІС‚РѕСЂРѕРІ РєРЅРёРіРё
 
-	void setPublisher(const std::string &);	// Ввод издателя книги
+	void setPublisher(const std::string &);	// Р’РІРѕРґ РёР·РґР°С‚РµР»СЏ РєРЅРёРіРё
 
-	std::string &getPublisher();	// Получение издателя книги
+	std::string &getPublisher();	// РџРѕР»СѓС‡РµРЅРёРµ РёР·РґР°С‚РµР»СЏ РєРЅРёРіРё
 
-	void setGenre(const std::string &);	// Ввод жанра
+	void setGenre(const std::string &);	// Р’РІРѕРґ Р¶Р°РЅСЂР°
 
-	std::string &getGenre();	// Получение жанра
+	std::string &getGenre();	// РџРѕР»СѓС‡РµРЅРёРµ Р¶Р°РЅСЂР°
 
-	void setTitle(const std::string &);	// Ввод названия книги
+	void setTitle(const std::string &);	// Р’РІРѕРґ РЅР°Р·РІР°РЅРёСЏ РєРЅРёРіРё
 
-	std::string &getTitle();	// Получение названия книги
+	std::string &getTitle();	// РџРѕР»СѓС‡РµРЅРёРµ РЅР°Р·РІР°РЅРёСЏ РєРЅРёРіРё
 
-	~Book();	// Деструктор экземпляра
+	~Book();	// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ СЌРєР·РµРјРїР»СЏСЂР°
 };
 
 #endif /* BOOK_H_ */

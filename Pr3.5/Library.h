@@ -1,4 +1,4 @@
-#include <string>
+﻿#include <string>
 #include <vector>
 #include <iostream>
 #include "Book.h"
@@ -7,35 +7,35 @@
 #define LIBRARY_H_
 
 class Library {
-	std::vector<Book> books;
-	int caseSize;
-	int shelfSize;
+	std::vector<Book> books;	// Вектор, хранящий экземпляры книг
+	int caseSize;	// Размер шкафа
+	int shelfSize;	// Размер полки шкафа
 public:
-	Library();
+	Library();	// Создает объект, заполненный нулями
 
-	Library(int, int);
+	Library(int, int);	// Создает объект с заданными размерами
 
-	Library(int, int, const std::vector<Book> &);
+	Library(int, int, const std::vector<Book> &);	// Создает объект с размерами и книгами
 
-	void setSize(int, int);
+	void setSize(int, int);	// Задает размер шафа и полки
 
-	void addBooks(const std::vector<Book> &);
+	void addBooks(const std::vector<Book> &);	// Добавляет книги в библиотеку
 
-	void eraseBook(int);
+	void eraseBook(int);	// Удаляет книги из библиотеки
 
 	void eraseBook(int, int, int);
 
-	void findBook(Book &);
+	void findBook(Book &);	// Находит местоположение книги
 
-	int getCaseSize();
+	int getCaseSize();	// Возвращает размер шкафа
 
-	int getShelfSize();
+	int getShelfSize();	// Возвращает размер полки шкафа
 
-	Book &getBook(int);
+	Book &getBook(int);	// Возвращает книгу, имеющую данный id
 
-	Book &getBook(int, int, int);
+	Book &getBook(int, int, int); // Выдает книгу по её местоположению
 
-	void printIdList();
+	void printIdList();	// Выводит книги и соответствующие им id
 
 	~Library();
 };
