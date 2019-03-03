@@ -16,6 +16,8 @@ int main() {
 		cout << s << endl;
 	}
 
+	fin.close();
+
 	system("pause");
 	return 0;
 }
