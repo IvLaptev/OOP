@@ -62,5 +62,6 @@ int main() {
 	bus.showAdvantages();
 	bicycle.showAdvantages();
 
+	system("pause");
 	return 0;
 }
