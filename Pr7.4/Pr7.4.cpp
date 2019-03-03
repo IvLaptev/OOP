@@ -96,5 +96,6 @@ int main() {
 	p.changeKeyboard(40);
 	p.changeScreen(6);
 
+	system("pause");
 	return 0;
 }
