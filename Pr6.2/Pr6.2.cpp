@@ -1,17 +1,17 @@
-#include <iostream>
+﻿#include <iostream>
 #include <cmath>
 using namespace std;
 
-class Function {
+class Function {	// Базовый класс функция
 public:
-	virtual void printFunction() = 0;
+	virtual void printFunction() = 0;	// Выводит функцию на экран
 
-	virtual double count(double x) = 0;
+	virtual double count(double x) = 0;	// Считает значение функции от аргумента
 
-	virtual void takeDerivative() = 0;
+	virtual void takeDerivative() = 0;	// Выводит производную
 };
 
-class Const : public Function{
+class Const : public Function{	// Класс, описывающий константу
 	double c;
 public:
 	Const(double c) { this->c = c; }
@@ -23,7 +23,7 @@ public:
 	void takeDerivative() { cout << "Derivative: 0" << endl; }
 };
 
-class Variable : public Function {
+class Variable : public Function {	// Класс, описывающий переменную
 public:
 	void printFunction() { cout << "Function: f(x) = x" << endl; }
 
@@ -32,7 +32,7 @@ public:
 	void takeDerivative() { cout << "Derivative: 1" << endl; }
 };
 
-class Sum : public Function {
+class Sum : public Function {	// Класс, описывающий сумму двух чисел
 	double y;
 public:
 	Sum(double y) { this->y = y; }
@@ -44,7 +44,7 @@ public:
 	void takeDerivative() { cout << "Derivative: 2" << endl; }
 };
 
-class Difference : public Function {
+class Difference : public Function {	// Класс, описывающий разность двух чисел
 	double y;
 public:
 	Difference(double y) { this->y = y; }
@@ -56,7 +56,7 @@ public:
 	void takeDerivative() { cout << "Derivative: 0" << endl; }
 };
 
-class Product : public Function {
+class Product : public Function {	// Класс, описывающий произведение двух чисел
 	double y;
 public:
 	Product(double y) { this->y = y; }
@@ -68,7 +68,7 @@ public:
 	void takeDerivative() { cout << "Derivative: y * dx" << endl; }
 };
 
-class Quotient : public Function {
+class Quotient : public Function {	// Класс, описывающий частное двух чисел
 	double y;
 public:
 	Quotient(double y) { this->y = y; }
@@ -80,7 +80,7 @@ public:
 	void takeDerivative() { cout << "Derivative: dx / y" << endl; }
 };
 
-class Sin : public Function {
+class Sin : public Function { // Класс, описывающий синус угла в радианах
 public:
 	void printFunction() { cout << "Function: f(x) = sin(x)" << endl; }
 
@@ -89,7 +89,7 @@ public:
 	void takeDerivative() { cout << "Derivative: cos(x)" << endl; }
 };
 
-class Cos : public Function {
+class Cos : public Function {	// Класс, описывающий косинус угла в радианах
 public:
 	void printFunction() { cout << "Function: f(x) = cos(x)" << endl; }
 
@@ -98,7 +98,7 @@ public:
 	void takeDerivative() { cout << "Derivative: -sin(x)" << endl; }
 };
 
-class Exp : public Function {
+class Exp : public Function {	// Класс, описывающий возведение экспоненты в степень
 public:
 	void printFunction() { cout << "Function: f(x) = e^x" << endl; }
 
@@ -107,7 +107,7 @@ public:
 	void takeDerivative() { cout << "Derivative: e^x" << endl; }
 };
 
-class Ln : public Function {
+class Ln : public Function {	// Класс, описывающий взятие натурального логарифма
 public:
 	void printFunction() { cout << "Function: f(x) = ln(x)" << endl; }
 
