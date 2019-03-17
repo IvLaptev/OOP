@@ -1,10 +1,10 @@
-#include <iostream>
+﻿#include <iostream>
 #include <fstream>
 #include "Complex.h"
 
 using namespace std;
 
-const Complex readNumber(ifstream&);
+const Complex readNumber(ifstream&);	// Считывает одно комплексное число из файла
 
 int main() {
 	ifstream f("complex.txt");
