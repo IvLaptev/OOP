@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <Windows.h>
 #include <string>
 using namespace std;
@@ -13,27 +13,11 @@ public:
 	Tiles(string& brand, double size_w, double size_h, double price) :
 		brand(brand), size_w(size_w), size_h(size_h), price(price) {}
 
-	Tiles(const Tiles& t) {
-		this->brand = t.brand;
-		this->price = t.price;
-		this->size_h = t.size_h;
-		this->size_w = t.size_w;
-	}
+	Tiles(const Tiles&);
 
-	Tiles operator= (const Tiles& t) {
-		this->brand = t.brand;
-		this->price = t.price;
-		this->size_h = t.size_h;
-		this->size_w = t.size_w;
-		return *this;
-	}
+	Tiles operator= (const Tiles&);
 
-	void getData() {
-		cout << "Brand: " << brand << endl;
-		cout << "Width: " << size_w << endl;
-		cout << "Height: " << size_h << endl;
-		cout << "Price: " << price << endl;
-	}
+	void getData();
 
 	~Tiles() {}
 };
@@ -66,4 +50,26 @@ int main() {
 
 	system("pause");
 	return 0;
+}
+
+Tiles::Tiles(const Tiles& t) {
+	this->brand = t.brand;
+	this->price = t.price;
+	this->size_h = t.size_h;
+	this->size_w = t.size_w;
+}
+
+Tiles Tiles::operator= (const Tiles& t) {
+	this->brand = t.brand;
+	this->price = t.price;
+	this->size_h = t.size_h;
+	this->size_w = t.size_w;
+	return *this;
+}
+
+void Tiles::getData() {
+	cout << "Brand: " << brand << endl;
+	cout << "Width: " << size_w << endl;
+	cout << "Height: " << size_h << endl;
+	cout << "Price: " << price << endl;
 }

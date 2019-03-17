@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <cmath>
 using namespace std;
 
@@ -8,33 +8,15 @@ class Complex {
 public:
 	Complex(double re, double im) : re(re), im(im) {}
 
-	Complex(const Complex& c) {
-		re = c.re;
-		im = c.re;
-	}
+	Complex(const Complex& c);
 
-	Complex operator= (const Complex& c) {
-		return Complex(c.re, c.im);
-	}
+	Complex operator= (const Complex& c);
 
-	void setNumber(double re, double im) {
-		this->re = re;
-		this->im = im;
-	}
+	void setNumber(double re, double im);
 
-	double getModule() {
-		return sqrt(re * re + im * im);
-	}
+	double getModule();
 
-	void displayData() {
-		cout << "Number: " << re;
-		if (im < 0) {
-			cout << im << "i" << endl;
-		} else {
-			cout << "+" << im << "i" << endl;
-		}
-		cout << "Module: " << getModule() << endl;
-	}
+	void displayData();
 
 	~Complex() {}
 };
@@ -56,4 +38,28 @@ int main() {
 
 	system("pause");
 	return 0;
+}
+
+Complex::Complex(const Complex& c) {
+	re = c.re;
+	im = c.re;
+}
+
+Complex Complex::operator= (const Complex& c) { return Complex(c.re, c.im); }
+
+void Complex::setNumber(double re, double im) {
+	this->re = re;
+	this->im = im;
+}
+
+double Complex::getModule() { return sqrt(re * re + im * im); }
+
+void Complex::displayData() {
+	cout << "Number: " << re;
+	if (im < 0) {
+		cout << im << "i" << endl;
+	} else {
+		cout << "+" << im << "i" << endl;
+	}
+	cout << "Module: " << getModule() << endl;
 }
