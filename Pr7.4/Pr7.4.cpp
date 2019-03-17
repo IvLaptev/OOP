@@ -8,8 +8,6 @@ public:
 	Screen(double size) { this->screenSize = size; }
 
 	virtual void changeScreen(double size) = 0;	// Виртуальный метод заены экрана
-
-
 };
 
 class Keyboard {	// Базовый абстрактный класс "Клавиатура"
@@ -25,17 +23,9 @@ class Computer : public Screen, Keyboard {	// Класс "Стационарны
 public:
 	Computer(double screenSize, int buttons) : Screen(screenSize), Keyboard(buttons) {};
 
-	void changeScreen(double size) {
-		cout << "Screen with " << screenSize <<
-				" size has been changed to " << size << " size" << endl;
-		screenSize = size;
-	}
+	void changeScreen(double size);
 
-	void changeKeyboard(int buttons) {
-		cout << "Keyboard with " << this->buttons << " buttons " <<
-				"has been changed to keyboard with " << buttons << " buttons" << endl;
-		this->buttons = buttons;
-	}
+	void changeKeyboard(int buttons);
 
 	~Computer() {}
 };
@@ -44,21 +34,9 @@ class Notebook : public Screen, Keyboard {	// Класс "Ноутбук"
 public:
 	Notebook(double screenSize, int buttons) : Screen(screenSize), Keyboard(buttons) {};
 
-	void changeScreen(double size) {
-		if (screenSize == size) {
-			cout << "Screen has been changed" << endl;
-		} else {
-			cout << "Notebook screen can be replaced only by the screen of the same size" << endl;
-		}
-	}
+	void changeScreen(double size);
 
-	void changeKeyboard(int buttons) {
-		if (this->buttons == buttons) {
-			cout << "Keyboard has been changed" << endl;
-		} else {
-			cout << "Notebook keyboard can be replaced only by the same keyboard" << endl;
-		}
-	}
+	void changeKeyboard(int buttons);
 
 	~Notebook() {}
 };
@@ -67,17 +45,9 @@ class Phone : public Screen, Keyboard {	// Класс "Телефон"
 public:
 	Phone(double screenSize, int buttons) : Screen(screenSize), Keyboard(buttons) {};
 
-	void changeScreen(double size) {
-		if (screenSize == size) {
-			cout << "Screen has been changed" << endl;
-		} else {
-			cout << "Phone screen can be replaced only by the screen of the same size" << endl;
-		}
-	}
+	void changeScreen(double size);
 
-	void changeKeyboard(int buttons) {
-		cout << "Phone keyboard can not be changed" << endl;
-	}
+	void changeKeyboard(int buttons);
 
 	~Phone() {}
 };
@@ -98,4 +68,44 @@ int main() {
 
 	system("pause");
 	return 0;
+}
+
+void Computer::changeScreen(double size) {
+	cout << "Screen with " << screenSize <<
+			" size has been changed to " << size << " size" << endl;
+	screenSize = size;
+}
+
+void Computer::changeKeyboard(int buttons) {
+	cout << "Keyboard with " << this->buttons << " buttons " <<
+			"has been changed to keyboard with " << buttons << " buttons" << endl;
+	this->buttons = buttons;
+}
+
+void Notebook::changeScreen(double size) {
+	if (screenSize == size) {
+		cout << "Screen has been changed" << endl;
+	} else {
+		cout << "Notebook screen can be replaced only by the screen of the same size" << endl;
+	}
+}
+
+void Notebook::changeKeyboard(int buttons) {
+	if (this->buttons == buttons) {
+		cout << "Keyboard has been changed" << endl;
+	} else {
+		cout << "Notebook keyboard can be replaced only by the same keyboard" << endl;
+	}
+}
+
+void Phone::changeScreen(double size) {
+	if (screenSize == size) {
+		cout << "Screen has been changed" << endl;
+	} else {
+		cout << "Phone screen can be replaced only by the screen of the same size" << endl;
+	}
+}
+
+void Phone::changeKeyboard(int buttons) {
+	cout << "Phone keyboard can not be changed" << endl;
 }
