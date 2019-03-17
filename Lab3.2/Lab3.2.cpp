@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <Windows.h>
 #include <string>
 using namespace std;
@@ -10,12 +10,7 @@ public:
 	double size_h;
 	double price;
 
-	void getData() {
-		cout << "Brand: " << brand << endl;
-		cout << "Width: " << size_w << endl;
-		cout << "Height: " << size_h << endl;
-		cout << "Price: " << price << endl;
-	}
+	void getData();	// Вывод данных на экран
 };
 
 int main() {
@@ -49,4 +44,11 @@ int main() {
 
 	system("pause");
 	return 0;
+}
+
+void Tiles::getData() {
+	cout << "Brand: " << brand << endl;
+	cout << "Width: " << size_w << endl;
+	cout << "Height: " << size_h << endl;
+	cout << "Price: " << price << endl;
 }

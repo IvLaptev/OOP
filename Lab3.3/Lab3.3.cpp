@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <cmath>
 using namespace std;
 
@@ -6,28 +6,13 @@ class Complex {
 	double re;
 	double im;
 public:
-	Complex(double re, double im) {
-		setNumber(re, im);
-	}
+	Complex(double re, double im) {	setNumber(re, im); }
 
-	void setNumber(double re, double im) {
-		this->re = re;
-		this->im = im;
-	}
+	void setNumber(double, double);	// Получает мнимую и действительную части числа
 
-	double getModule() {
-		return sqrt(re * re + im * im);
-	}
+	double getModule() { return sqrt(re * re + im * im); }	// Возвращает модуль
 
-	void displayData() {
-		cout << "Number: " << re;
-		if (im < 0) {
-			cout << im << "i" << endl;
-		} else {
-			cout << "+" << im << "i" << endl;
-		}
-		cout << "Module: " << getModule() << endl;
-	}
+	void displayData();	// Выводит информацию о числе на экран
 };
 
 int main() {
@@ -49,4 +34,19 @@ int main() {
 
 	system("pause");
 	return 0;
+}
+
+void Complex::setNumber(double re, double im) {
+	this->re = re;
+	this->im = im;
+}
+
+void Complex::displayData() {
+	cout << "Number: " << re;
+	if (im < 0) {
+		cout << im << "i" << endl;
+	} else {
+		cout << "+" << im << "i" << endl;
+	}
+	cout << "Module: " << getModule() << endl;
 }

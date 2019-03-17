@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <Windows.h>
 using namespace std;
@@ -8,29 +8,15 @@ class Child {
 	string surname;
 	int age;
 public:
-	Child(string& name, string& surname, int age) {
-		setName(name);
-		setSurname(surname);
-		setAge(age);
-	}
+	Child(string&, string&, int);
 
-	void setName(string& name) {
-		this->name = name;
-	}
+	void setName(string& name) { this->name = name;	}	// Методы ввода данных
 
-	void setSurname(string& surname) {
-		this->surname = surname;
-	}
+	void setSurname(string& surname) { this->surname = surname;	}
 
-	void setAge(int age) {
-		this->age = age;
-	}
+	void setAge(int age) { this->age = age;	}
 
-	void display() {
-		cout << "Name: " << name << endl;
-		cout << "Surname: " << surname << endl;
-		cout << "Age: " << age << endl;
-	}
+	void display();	// Вывод данных на экран
 };
 
 int main() {
@@ -60,4 +46,16 @@ int main() {
 
 	system("pause");
 	return 0;
+}
+
+Child::Child(string& name, string& surname, int age) {
+	setName(name);
+	setSurname(surname);
+	setAge(age);
+}
+
+void Child::display() {
+	cout << "Name: " << name << endl;
+	cout << "Surname: " << surname << endl;
+	cout << "Age: " << age << endl;
 }
