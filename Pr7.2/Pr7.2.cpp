@@ -17,21 +17,16 @@ protected:
 	vector<double> x;	// х составляющая координат точек
 	vector<double> y;	// у составляющая координат точек
 public:
-	Quadrilateral(vector<double> &x, vector<double> &y) : Figure(4) {
-		this->x = x;
-		this->y = y;
-	}
+	Quadrilateral(vector<double>&, vector<double>&);
+
+	virtual double getSquare() = 0;
 };
 
 class Rhombus : public Quadrilateral {	// Класс "Ромб"
 public:
-	Rhombus(vector<double> &x, vector<double> &y) :
-		Quadrilateral(x, y) {};
+	Rhombus(vector<double> &x, vector<double> &y) :	Quadrilateral(x, y) {}
 
-	double getSquare() {	// Определённый метод для подсчёта площади фигуры
-		return sqrt((x[0] - x[2]) * (x[0] - x[2]) + (y[0] - y[2]) * (y[0] - y[2])) *
-				sqrt((x[1] - x[3]) * (x[1] - x[3]) + (y[1] - y[3]) * (y[1] - y[3])) / 2;
-	}
+	double getSquare();	// Определённый метод для подсчёта площади фигуры
 
 	~Rhombus() {
 	}
@@ -39,13 +34,9 @@ public:
 
 class Rectangle : public Quadrilateral {	// Класс "Прямоугольник"
 public:
-	Rectangle(vector<double> &x, vector<double> &y) :
-		Quadrilateral(x, y) {};
+	Rectangle(vector<double> &x, vector<double> &y) : Quadrilateral(x, y) {}
 
-	double getSquare() {	// Определённый метод для подсчёта площади фигуры
-		return sqrt((x[0] - x[1]) * (x[0] - x[1]) + (y[0] - y[1]) * (y[0] - y[1])) *
-					sqrt((x[2] - x[3]) * (x[2] - x[3]) + (y[2] - y[3]) * (y[2] - y[3]));
-	}
+	double getSquare();	// Определённый метод для подсчёта площади фигуры
 
 	~Rectangle() {}
 };
@@ -73,4 +64,19 @@ int main() {
 
 	system("pause");
 	return 0;
+}
+
+Quadrilateral::Quadrilateral(vector<double> &x, vector<double> &y) : Figure(4) {
+	this->x = x;
+	this->y = y;
+}
+
+double Rhombus::getSquare() {
+	return sqrt((x[0] - x[2]) * (x[0] - x[2]) + (y[0] - y[2]) * (y[0] - y[2])) *
+			sqrt((x[1] - x[3]) * (x[1] - x[3]) + (y[1] - y[3]) * (y[1] - y[3])) / 2;
+}
+
+double Rectangle::getSquare() {
+	return sqrt((x[0] - x[1]) * (x[0] - x[1]) + (y[0] - y[1]) * (y[0] - y[1])) *
+				sqrt((x[2] - x[3]) * (x[2] - x[3]) + (y[2] - y[3]) * (y[2] - y[3]));
 }
