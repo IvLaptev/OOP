@@ -33,7 +33,7 @@ int main() {
 	Vector v2 = v1;
 
 	if (v1 == v2) {
-		cout << v1;
+		cout << v1 + v2;
 	}
 	cout << endl;
 
