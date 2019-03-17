@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <fstream>
 #include <string>
 #include <Windows.h>
@@ -8,15 +8,15 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	ifstream fin("a.txt");
+	ifstream fin("a.txt");	// Открытие файла на считывание данных изз него
 
 	while (!fin.eof()) {
 		string s;
-		fin >> s;
+		fin >> s;	// Считывание данных из файла
 		cout << s << endl;
 	}
 
-	fin.close();
+	fin.close();	// Закрытие файла
 
 	system("pause");
 	return 0;
