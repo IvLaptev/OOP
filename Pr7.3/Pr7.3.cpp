@@ -16,33 +16,21 @@ class Car : public Transport{	// Класс "Автомобиль"
 public:
 	Car(int maxVelocity) : Transport(maxVelocity) {};
 
-	void showAdvantages() {	// Определённый метод, выводящий достоинства автомобиля
-		cout << "Car:" << endl;
-		cout << "Can park in the yard" << endl;
-		cout << "Max speed: " << maxVelocity << endl;
-	}
+	void showAdvantages();	// Определённый метод, выводящий достоинства автомобиля
 };
 
 class Bus : public Transport {	// Класс "Автобус"
 public:
 	Bus(int maxVelocity) : Transport(maxVelocity) {};
 
-	void showAdvantages() {	// Определённый метод, выводящий достоинства автобуса
-		cout << "Bus:" << endl;
-		cout << "Has a big size" << endl;
-		cout << "Max speed: " << maxVelocity << endl;
-	}
+	void showAdvantages();	// Определённый метод, выводящий достоинства автобуса
 };
 
 class Bicycle : public Transport {	// Класс "Велосипед"
 public:
 	Bicycle(int maxVelocity) : Transport(maxVelocity) {};
 
-	void showAdvantages() {	// Определённый метод, выводящий достоинства велосипеда
-		cout << "Bicycle:" << endl;
-		cout << "Can ride everywhere" << endl;
-		cout << "Max speed: " << maxVelocity << endl;
-	}
+	void showAdvantages();	// Определённый метод, выводящий достоинства велосипеда
 };
 
 int main() {
@@ -64,4 +52,22 @@ int main() {
 
 	system("pause");
 	return 0;
+}
+
+void Car::showAdvantages() {
+	cout << "Car:" << endl;
+	cout << "Can park in the yard" << endl;
+	cout << "Max speed: " << maxVelocity << endl;
+}
+
+void Bus::showAdvantages() {
+	cout << "Bus:" << endl;
+	cout << "Has a big size" << endl;
+	cout << "Max speed: " << maxVelocity << endl;
+}
+
+void Bicycle::showAdvantages() {
+	cout << "Bicycle:" << endl;
+	cout << "Can ride everywhere" << endl;
+	cout << "Max speed: " << maxVelocity << endl;
 }
